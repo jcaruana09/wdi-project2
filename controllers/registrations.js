@@ -1,4 +1,8 @@
 const User = require('../models/user');
+const mongoose = require('mongoose');
+const Promise = require('bluebird');
+
+mongoose.Promise = Promise;
 
 function newRoute(req, res){
   res.render('registrations/index');
@@ -13,7 +17,7 @@ function createRoute(req, res){
     })
     .catch((err) =>{
       if(err.name === 'ValidationError'){
-        return res.status(400).render('registration/index', {message: err.toString()});
+        return res.status(400).render('registrations/index', {message: err.toString()});
       }
     });
 }
