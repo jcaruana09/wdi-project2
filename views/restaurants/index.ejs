@@ -1,0 +1,20 @@
+<h2 class="page-header">Restaurants</h2>
+
+<div class="row">
+  <% restaurants.forEach(restaurant => { %>
+    <div class="col s12 m6">
+      <div class="card red darken-4">
+        <div class="card-content white-text">
+          <span><p class="card-title"><%= restaurant.name %></p></span>
+          <p class="card-label-top">Cuisine: <%= restaurant.cuisine %></p>
+          <p class="card-label">Location: <%= restaurant.location %></p>
+          <p class="card-label-bottom">User: <%= user.username %></p>
+        </div>
+        <div class="card-action">
+          <a class="grey-text text-lighten-5" href="/restaurants/<%= restaurant.id %>">View Reviews</a>
+          <a class="grey-text text-lighten-5" href="/restaurants/<%= restaurant.id %>/edit">Edit Details</a>
+        </div>
+      </div>
+    </div>
+  <% }) %>
+</div>

@@ -1,0 +1,76 @@
+.nav-extended {
+  background-color: #b71c1c;
+  padding-left: 10px;
+}
+
+body {
+  background-color: #efefef;
+}
+
+button {
+  background-color: #f7b733;
+  border-radius: 20px;
+  border: 2px solid #808080;
+  color: #808080;
+}
+
+.card-action a{
+  color: #efefef;
+}
+
+.row, button {
+  padding: 10px 20px;
+}
+
+form {
+  color: white;
+  display: inline-block;
+}
+
+nav .active:hover {
+  border-bottom: 4px solid #dfdce3;
+}
+
+p {
+  color: #efefef;
+}
+
+.card-title{
+  border-bottom: 2px solid #efefef;
+  color: #efefef;
+  font-size: 29px;
+  padding-bottom: 15px;
+  text-align: right;
+}
+
+.card-label{
+  color: #efefef;
+}
+
+.card-label-top{
+  padding-top: 30px;
+}
+
+.card-label-bottom{
+  border-bottom: 2px solid #efefef;
+  padding-bottom: 30px;
+}
+
+.home-page-header{
+  color: #808080;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.home-welcome{
+  color: #808080;
+  padding-top: 10px;
+  text-align: center;
+  margin-left: 80px;
+  margin-right: 80px;
+}
+
+.page-header {
+  color: #808080;
+  padding-left: 20px;
+}

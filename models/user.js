@@ -1,16 +1,13 @@
-const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-mongoose.Promise = require('bluebird');
+const mongoose   = require('mongoose');
+const bcrypt     = require('bcrypt');
 
 const userSchema = new mongoose.Schema({
-  username: String,
-  email: String,
-  password: {type: String, required: true}
+  username: {type: String, required: true, minlength: 3},
+  email: {type: String, required: true, unique: true},
+  password: {type: String, required: true, minlength: 5}
 });
 
 
-// setting up passwordConfirmation virtual first as that is how its done on gitbook
-// if there are problems try switching it after the validate password function.
 userSchema.methods.validatePassword = function validatePassword(password){
   return bcrypt.compareSync(password, this.password);
 };
@@ -22,9 +19,8 @@ userSchema
   });
 
 userSchema.pre('validate', function checkPassword(next){
-  console.log('checkPassword function');
   if(this.isModified('password') && this._passwordConfirmation !== this.password){
-    this.invalidate('passwordConfirmation', 'does not match');
+    this.invalidate('passwordConfirmation', 'Does not match');
   }
   next();
 });

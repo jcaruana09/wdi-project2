@@ -1,5 +1,5 @@
 Arguments: 
-  /Users/jamescaruana/.nvm/versions/node/v9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js add express-session
+  /Users/jamescaruana/.nvm/versions/node/v9.8.0/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js add method-override
 
 PATH: 
   /Users/jamescaruana/.nvm/versions/node/v9.8.0/bin:/Users/jamescaruana/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
@@ -29,6 +29,7 @@ npm manifest:
       "express": "^4.16.3",
       "express-ejs-layouts": "^2.4.0",
       "express-flash": "^0.0.2",
+      "express-session": "^1.15.6",
       "flash": "^1.1.0",
       "method-override": "^2.3.10",
       "mongodb": "^3.0.6",
@@ -2293,4 +2294,6 @@ Trace:
       at ChildProcess.<anonymous> (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:30281:17)
       at ChildProcess.emit (events.js:180:13)
       at maybeClose (internal/child_process.js:936:16)
-      at Process.ChildProcess._handle.onexit (internal/child_process.js:220:5)
+      at Socket.stream.socket.on (internal/child_process.js:353:11)
+      at Socket.emit (events.js:180:13)
+      at Pipe._handle.close [as _onclose] (net.js:538:12)

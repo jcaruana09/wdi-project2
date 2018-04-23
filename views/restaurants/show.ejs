@@ -1,0 +1,15 @@
+<h3 class="page-header"><%= restaurant.name %></h3>
+<button href="/reviews/new">Create new review</button>
+<ul class="collection">
+  <% restaurant.reviews.forEach(review => { %>
+    <li class="collection-item">
+      <p>Rating: <%= review.rating %></p>
+      <p>Review: <%= review.review %></p>
+      <p>User: <%= review.user.username %></p>
+    </li>
+  <% }) %>
+</ul>
+<form method="post" action="/restaurants/<%= restaurant.id %>">
+  <input type="hidden" name="_method" value="DELETE">
+  <button class="red btn" type="submit" name="action">Delete</button>
+</form>

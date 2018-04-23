@@ -1,21 +1,20 @@
 const User = require('../models/user');
-const mongoose = require('mongoose');
-const Promise = require('bluebird');
-
-mongoose.Promise = Promise;
 
 function newRoute(req, res){
   res.render('registrations/index');
 }
 
 function createRoute(req, res){
-  console.log('this is req:', req);
+  console.log('inside createRoute registration');
   User
     .create(req.body)
-    .then(() => {
-      res.redirect('/');
+    .then((user) => {
+      console.log('inside createRoute registration---> user', user);
+      req.flash('info', `Thanks for registering ${user.username}`);
+      res.redirect('/signin');
     })
-    .catch((err) =>{
+    .catch((err) => {
+      console.log('inside the error',err);
       if(err.name === 'ValidationError'){
         return res.status(400).render('registrations/index', {message: err.toString()});
       }
