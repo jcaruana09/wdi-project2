@@ -5,6 +5,9 @@
   "repository": "git@github.com:jcaruana09/wdi-project2.git",
   "author": "jcaruana09 <jcaruana09@outlook.com>",
   "license": "MIT",
+  "scripts": {
+    "start": "node index"
+  },
   "dependencies": {
     "bcrypt": "^2.0.0",
     "bluebird": "^3.5.1",
